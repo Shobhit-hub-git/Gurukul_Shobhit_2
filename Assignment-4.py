@@ -136,35 +136,31 @@
 
 # 9. Create a class Time with attributes hours and minutes. Add a method add_time() that takes another Time object,
 # adds its values to the current object, and returns a new Time object with the resulting sum.
-class Time:
-    def __init__(self, hours=0, minutes=0):
-        self.hours = hours
-        self.minutes = minutes
-        self._normalize()
-
-    def _normalize(self):
-        if self.minutes >= 60:
-            extra_hours = self.minutes // 60
-            self.hours += extra_hours
-            self.minutes %= 60
-        elif self.minutes < 0:
-            extra_hours = (-self.minutes // 60) + 1
-            self.hours -= extra_hours
-            self.minutes = (self.minutes + 60 * extra_hours) % 60
-
-    def add_time(self, other):
-        new_hours = self.hours + other.hours
-        new_minutes = self.minutes + other.minutes
-
-        return Time(new_hours, new_minutes)
-
-    def __str__(self):
-        return f"{self.hours:02}:{self.minutes:02}"
-
-time1 = Time(2, 70)
-time2 = Time(3, 30)
-result_time = time1.add_time(time2)
-print(result_time)
+# class TimeAdd:
+#     def __init__(self,hour=0,min=0):
+#         self.hour=hour
+#         self.min=min
+#         self.minconversion()
+#     def minconversion(self):
+#         ehour=self.min//60
+#         self.hour+=ehour
+#         self.min=self.min-ehour*60
+#     def show(self):
+#         print(self.hour,":",self.min)
+#     def timeadd(self,newhour,newmin):
+#         self.newhour=newhour
+#         self.newmin=newmin
+#         self.totalmin=self.min+self.newmin
+#         ehour1=self.totalmin//60
+#         self.totalhour=self.hour+self.newhour+ehour1
+#         self.finalmin=self.totalmin-ehour1*60
+#         return self.totalhour,self.finalmin
+# t1=TimeAdd(10,75)
+# t1.show()
+# t2=TimeAdd(10,80)
+# t2.show()
+# h,m=t1.timeadd(10,30)
+# print(h,":",m)
 # 10.Create a class EmployeeSalary with class variables basic_salary and bonus_percentage. Write a class method
 # set_bonus_percentage() to change the bonus percentage for all employees. Create an instance method
 # calculate_total_salary() to calculate and return the total salary (basic + bonus) for a specific employee.
